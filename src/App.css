@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.informationInput,
+.cv {
+  border: black solid 3px;
+}
