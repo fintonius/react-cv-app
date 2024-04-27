@@ -31,6 +31,7 @@ body {
 main {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  gap: 3rem;
 }
 
 h1 {
@@ -69,4 +70,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.cv {
+  border: 1px solid black;
 }
