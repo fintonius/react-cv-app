@@ -1,9 +1,20 @@
-export default function ProfileInput() {
+// this could end up being refactored as a single form component and used
+// for each input section which when added to the App file is sent a bunch 
+// of info as props that is then .map() into JSX?
+
+import { useState } from "react";
+
+export default function ProfileInput(props) {
+
+    const [name, setName] = useState('');
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log('help')
-        console.log(e)
+        props.onSubmit('test')
+    }
+
+    function handleChange(e) {
+        setName(e.target.value);
     }
 
     return (
@@ -14,7 +25,7 @@ export default function ProfileInput() {
                 <label htmlFor="first-name">
                     First Name
                 </label>
-                <input type="text" id="first-name" autoComplete="off" />
+                <input type="text" id="first-name" value={name} onChange={handleChange} autoComplete="off" />
                 <label htmlFor="second-name">
                    Second Name
                 </label>
