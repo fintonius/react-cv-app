@@ -10,7 +10,9 @@ export default function ProfileInput(props) {
 
     function handleSubmit(e){
         e.preventDefault();
-        props.onSubmit('test')
+        if(name === '') alert('enter text');
+        props.onSubmit(name);
+        setName('');
     }
 
     function handleChange(e) {
