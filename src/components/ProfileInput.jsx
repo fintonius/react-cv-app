@@ -6,6 +6,9 @@ import { useState } from "react";
 
 export default function ProfileInput(props) {
 
+    // THIS AND THE OTHER INPUTS ARE GOING TO REQUIRE AN ARRAY||OBJECT TO 
+    // STORE THE USER INPUT IN, NOT JUST A STRING. WILL THEN NEED A WAY
+    // TO PASS ALL THE INFO TO THE RELEVANT PLACE USING handleSubmit()???
     const [name, setName] = useState('');
 
     function handleSubmit(e){

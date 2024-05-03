@@ -2,12 +2,23 @@ import './App.css';
 import ProfileInput from './components/ProfileInput';
 import JobInput from './components/JobInput';
 import EducationInput from './components/EducationInput';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-export default function App() {
+export default function App(props) {
+
+  console.log('this is DATA: ', props.cv)
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    surName: '',
+    email: '',
+  });
+
+  const profileData = props.cv?.map(())
 
   function addInfo(info) {
-    console.log(info);
+      console.log(info);
   }
 
   return (
@@ -57,3 +68,21 @@ export default function App() {
     </>
   )
 }
+
+// CODE FOR USING JSON DATABASE
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await axios.get('cvData.json');
+  //     const data = response.data;
+  //     console.log('this is data: ', data);
+  //     setFormData(data);
+  //   } catch (error) {
+  //     console.log('Error fetching data: ', error);
+  //   }
+  // }
+  // 
