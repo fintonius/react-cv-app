@@ -8,18 +8,16 @@ import JobEntry from './components/JobEntry';
 
 export default function App(props) {
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    surName: '',
-    email: '',
-  });
+  function addRecord(record) {
+    console.log(record)
+  }
 
   return (
     <>
       <main>
         <div className='input'>
           <div>
-            <ProfileInput/>
+            <ProfileInput addRecord={addRecord}/>
           </div>
           <div>
             <JobInput />
@@ -59,7 +57,6 @@ export default function App(props) {
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
-            <DisplayInfo formData={formData} />
           </section>
           <section className='work-experience'>
             <h2>Work Experience</h2>

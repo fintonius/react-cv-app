@@ -4,8 +4,22 @@
 
 import { useState } from "react";
 
-export default function ProfileInput({submitFormData, onInputChange, handleSubmit }) {
+export default function ProfileInput(props) {
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.addRecord('more hell scape');
+      }
 
+    function handleInput(e) {
+        console.log(e.target.value)
+    } 
+    
+    const [formData, setFormData] = useState({
+        firstName: '',
+        surName: '',
+        email: '',
+    });
+    
     return (        
         <div>
             <h2>Profile</h2>
@@ -16,7 +30,9 @@ export default function ProfileInput({submitFormData, onInputChange, handleSubmi
                 <input 
                     type="text" 
                     id="first-name" 
-                    autoComplete="off" 
+                    autoComplete="off"
+                    value={formData.firstName}
+                    onChange={handleInput}
                 />
                 <label htmlFor="second-name">
                    Second Name
