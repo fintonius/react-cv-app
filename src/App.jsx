@@ -3,6 +3,7 @@ import ProfileInput from './components/ProfileInput';
 import JobInput from './components/JobInput';
 import EducationInput from './components/EducationInput';
 import { useEffect, useState } from 'react';
+import DisplayInfo from './components/DisplayInfo';
 import axios from 'axios';
 
 export default function App(props) {
@@ -15,7 +16,14 @@ export default function App(props) {
     email: '',
   });
 
-  const profileData = props.cv?.map(())
+  const handleInputChange =  (name, value) => {
+    setFormData({...formData, [name]: value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('This is the form data: ', formData)
+  };
 
   function addInfo(info) {
       console.log(info);
@@ -25,7 +33,12 @@ export default function App(props) {
     <>
       <main>
         <div className='input'>
-          <div><ProfileInput onSubmit={addInfo} /></div>
+          <div>
+            <ProfileInput
+              handleSubmit={handleSubmit}
+              submitFormData={formData}
+              onInputChange={handleInputChange}
+          /></div>
           <div><JobInput /></div>
           <div><EducationInput /></div>
         </div>
@@ -58,7 +71,10 @@ export default function App(props) {
               - <section className='personal-info'>{personalInfoList}</section>
           */}
           <h1>CV</h1>
-          <section className='personal-info'>Personal Info</section>
+          <section className='personal-info'>
+            Personal Info
+            <DisplayInfo formData={formData} />
+          </section>
           <section className='work-experience'>Work Experience</section>
           <section className='education'>Education</section>
           <section className='skills'>Skills</section>
