@@ -4,11 +4,9 @@ import JobInput from './components/JobInput';
 import EducationInput from './components/EducationInput';
 import { useEffect, useState } from 'react';
 import DisplayInfo from './components/DisplayInfo';
-import axios from 'axios';
+import JobEntry from './components/JobEntry';
 
 export default function App(props) {
-
-  console.log('this is DATA: ', props.cv)
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -16,31 +14,19 @@ export default function App(props) {
     email: '',
   });
 
-  const handleInputChange =  (name, value) => {
-    setFormData({...formData, [name]: value});
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('This is the form data: ', formData)
-  };
-
-  function addInfo(info) {
-      console.log(info);
-  }
-
   return (
     <>
       <main>
         <div className='input'>
           <div>
-            <ProfileInput
-              handleSubmit={handleSubmit}
-              submitFormData={formData}
-              onInputChange={handleInputChange}
-          /></div>
-          <div><JobInput /></div>
-          <div><EducationInput /></div>
+            <ProfileInput/>
+          </div>
+          <div>
+            <JobInput />
+          </div>
+          <div>
+            <EducationInput />
+          </div>
         </div>
         <div className='cv'>
           Hell world
@@ -75,7 +61,10 @@ export default function App(props) {
             Personal Info
             <DisplayInfo formData={formData} />
           </section>
-          <section className='work-experience'>Work Experience</section>
+          <section className='work-experience'>
+            <h2>Work Experience</h2>
+            <JobEntry data={props.cv}/>
+          </section>
           <section className='education'>Education</section>
           <section className='skills'>Skills</section>
 

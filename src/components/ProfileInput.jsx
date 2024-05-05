@@ -6,24 +6,7 @@ import { useState } from "react";
 
 export default function ProfileInput({submitFormData, onInputChange, handleSubmit }) {
 
-    // THIS AND THE OTHER INPUTS ARE GOING TO REQUIRE AN ARRAY||OBJECT TO 
-    // STORE THE USER INPUT IN, NOT JUST A STRING. WILL THEN NEED A WAY
-    // TO PASS ALL THE INFO TO THE RELEVANT PLACE USING handleSubmit()???
-    // const [name, setName] = useState('');
-
-    // function handleSubmit(e){
-    //     e.preventDefault();
-    //     if(name === '') alert('enter text');
-    //     props.onSubmit(name);
-    //     setName('');
-    // }
-
-    // function handleChange(e) {
-    //     setName(e.target.value);
-    // }
-
-    return (
-        
+    return (        
         <div>
             <h2>Profile</h2>
             <form onSubmit={handleSubmit}>
@@ -33,8 +16,6 @@ export default function ProfileInput({submitFormData, onInputChange, handleSubmi
                 <input 
                     type="text" 
                     id="first-name" 
-                    value={submitFormData.name} 
-                    onChange={(e) => onInputChange(e.target.name, e.target.value)} 
                     autoComplete="off" 
                 />
                 <label htmlFor="second-name">
