@@ -5,9 +5,6 @@ import './index.css'
 
 //test data to make sure functions running correctly
 
-// WORK OUT HOW TO MAKE AN ARRAY OF OBJECTS CONTAINING EITHER 
-// ARRAYS OR OBJECTS TO MIMIC A DATABASE FOR THE CV WITH DIFF
-// ARRAYS/OBJECTS FOR EACH SECTION - JOB, EDUCATION, PROFILE, ETC.
 const DATA = [
   {
       id: 1,

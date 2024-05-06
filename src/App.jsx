@@ -8,8 +8,15 @@ import JobEntry from './components/JobEntry';
 
 export default function App(props) {
 
+  const [profileData, setProfileData] = useState({
+    name: '',
+    surName: '',
+    email: '',
+    phone: '',
+  });
+
   function addInfo(name) {
-    console.log('this is name', name);
+    setProfileData(prevData => ({ ...prevData, ...name }));
   }
 
   return (
@@ -31,6 +38,9 @@ export default function App(props) {
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
+            <div>Name: {profileData.name} {profileData.surName}</div>
+            <div>Email: {profileData.email}</div>
+            <div>Phone: {profileData.phone}</div>
           </section>
           <section className='work-experience'>
             <h2>Work Experience</h2>
