@@ -9,6 +9,7 @@ import JobEntry from './components/JobEntry';
 export default function App(props) {
 
   const [profileData, setProfileData] = useState({
+    category: '',
     name: '',
     surName: '',
     email: '',
@@ -17,7 +18,10 @@ export default function App(props) {
 
   function addInfo(name) {
     setProfileData(prevData => ({ ...prevData, ...name }));
+    console.log(profileData)
   }
+
+
 
   return (
     <>
@@ -34,10 +38,12 @@ export default function App(props) {
           </div>
         </div>
         <div className='cv'>
+
           Hell world
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
+            <button onClick={props.addData}>Clcik</button>
             <div>Name: {profileData.name} {profileData.surName}</div>
             <div>Email: {profileData.email}</div>
             <div>Phone: {profileData.phone}</div>
@@ -48,7 +54,7 @@ export default function App(props) {
           </section>
           <section className='education'>Education</section>
           <section className='skills'>Skills</section>
-
+          
         </div>
       </main>
     </>

@@ -8,7 +8,7 @@ import './index.css'
 const DATA = [
   {
       id: 1,
-      name: "Experience",
+      category: "Experience",
       subObjects: [
           { placeName: 'Tate',  id: 1, dates: '2019 - present', description: 'some text here for the moment'},
           { placeName: 'NGS', id: 2, dates: '2015 - 2019', description: 'some text here for the moment'},
@@ -17,7 +17,7 @@ const DATA = [
   },
   {
       id: 2,
-      name: "Profile",
+      category: "Profile",
       subObjects: [
           { placeName: 1, subName: "SubObject 2.1" },
           { placeName: 2, subName: "SubObject 2.2" },
@@ -26,7 +26,7 @@ const DATA = [
   },
   {
       id: 3,
-      name: "Education",
+      category: "Education",
       subObjects: [
           { placeName: 1, subName: "SubObject 3.1" },
           { placeName: 2, subName: "SubObject 3.2" },
@@ -35,9 +35,18 @@ const DATA = [
   }
 ];
 
+function addData(data) {
+  const newEntry = DATA.map((entry) => {
+    if(entry.category === 'Profile') {
+      console.log('testy test')
+    }
+
+  })
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* passing DATA as prop to App, it's accessible as props.cv*/}
-    <App cv={DATA} />
+    <App cv={DATA} addData={addData}/>
   </React.StrictMode>,
 )

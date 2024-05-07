@@ -14,7 +14,8 @@ export default function ProfileInput(props) {
           name: name,
           surName: surName,
           email: email,
-          phone: phone
+          phone: phone,
+          category: 'profile',
         };
         props.addInfo(profileData);
       };
