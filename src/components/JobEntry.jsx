@@ -2,7 +2,7 @@ import DataRecord from "./DataRecord";
 
 export default function JobEntry(props) {
     const jobList = props.data?.map((category) => {
-        if(category.category === 'Experience') {
+        if(category.category === 'experience') {
            return category.subObjects.map((job) => {
             return   <DataRecord 
                         placeName={job.placeName} 

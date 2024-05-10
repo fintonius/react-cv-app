@@ -14,7 +14,7 @@ export default function JobInput(props) {
             jobTitle: jobTitle,
             date: date,
             description: description,
-            category: 'profile',
+            category: 'experience',
         };
         props.addData(jobData);
     };

@@ -8,7 +8,7 @@ import './index.css'
 const DATA = [
   {
       id: 1,
-      category: "Experience",
+      category: "experience",
       subObjects: [
           { placeName: 'Tate',  id: 1, dates: '2019 - present', description: 'some text here for the moment'},
           { placeName: 'NGS', id: 2, dates: '2015 - 2019', description: 'some text here for the moment'},
@@ -17,7 +17,7 @@ const DATA = [
   },
   {
       id: 2,
-      category: "Profile",
+      category: "profile",
       subObjects: [
           { placeName: 1, subName: "SubObject 2.1" },
           { placeName: 2, subName: "SubObject 2.2" },
@@ -26,7 +26,7 @@ const DATA = [
   },
   {
       id: 3,
-      category: "Education",
+      category: "education",
       subObjects: [
           { placeName: 1, subName: "SubObject 3.1" },
           { placeName: 2, subName: "SubObject 3.2" },
@@ -37,13 +37,12 @@ const DATA = [
 
 function addData(data) {
   const newEntry = DATA.map((entry) => {
-    console.log('this is data', data)
-    if(entry.category === 'Profile') {
-      console.log('testy test')
-    } else {
-      console.log('faily fail')
-    }
-
+    if(data.category === entry.category) {
+      console.log('testy test', entry.subObjects);
+      entry.subObjects.push(data);
+      console.log('post push', entry.subObjects);
+      return;
+    };
   })
 }
 
