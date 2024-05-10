@@ -18,10 +18,13 @@ export default function App(props) {
 
   function addInfo(name) {
     setProfileData(prevData => ({ ...prevData, ...name }));
-    console.log(profileData)
   }
 
+  function addData() {
+    props.addData('barnacles');
+  }
 
+const test = 'testing';
 
   return (
     <>
@@ -43,7 +46,7 @@ export default function App(props) {
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
-            <button onClick={props.addData}>Clcik</button>
+            <button onClick={addData}>Clcik</button>
             <div>Name: {profileData.name} {profileData.surName}</div>
             <div>Email: {profileData.email}</div>
             <div>Phone: {profileData.phone}</div>

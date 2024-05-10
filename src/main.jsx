@@ -37,8 +37,11 @@ const DATA = [
 
 function addData(data) {
   const newEntry = DATA.map((entry) => {
+    console.log('this is data', data)
     if(entry.category === 'Profile') {
       console.log('testy test')
+    } else {
+      console.log('faily fail')
     }
 
   })
