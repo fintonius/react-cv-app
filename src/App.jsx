@@ -14,14 +14,21 @@ export default function App(props) {
     surName: '',
     email: '',
     phone: '',
+    date: '',
+    description: '',
   });
 
-  function addInfo(name) {
-    setProfileData(prevData => ({ ...prevData, ...name }));
+  function addInfo(profile) {
+    setProfileData(prevData => ({ ...prevData, ...profile }));
   }
 
-  function addData() {
-    props.addData('barnacles');
+  // SO, COPY THE ABOVE APPROACH FOR CAPTURING USER INPUT
+  // FOR THE JOBS, EDUCATION, ETC. SECTIONS, USE profileData
+  // TO CONTAIN THE DATA THEN PASS IT BACK TO THE "DB" IN MAIN
+  // WITH THE BELOW FUNCTION
+
+  function addData(data) {
+    props.addData(data);
   }
 
 const test = 'testing';
@@ -34,7 +41,7 @@ const test = 'testing';
             <ProfileInput addInfo={addInfo} />
           </div>
           <div>
-            <JobInput />
+            <JobInput addData={addData}/>
           </div>
           <div>
             <EducationInput />
@@ -53,7 +60,7 @@ const test = 'testing';
           </section>
           <section className='work-experience'>
             <h2>Work Experience</h2>
-            <JobEntry data={props.cv}/>
+            <JobEntry data={props.cv} />
           </section>
           <section className='education'>Education</section>
           <section className='skills'>Skills</section>
