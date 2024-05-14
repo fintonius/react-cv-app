@@ -13,15 +13,12 @@ export default function App(props) {
     console.log('this is data: ', data)
     console.log('testy test', cv);
     const newEntry = cv.map((entry) => {
-      if(data.category === entry.category) {
-        
+      if(data.category === entry.category) {        
         entry.subObjects.push(data);
-        console.log('post push', cv);
         return;
       };
-    })
-    
-    setCv([...cv, newEntry]);
+    })    
+    setCv([...cv]);
     console.log('this is final cv: ', cv)
   }
   
@@ -67,7 +64,6 @@ export default function App(props) {
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
-            <button onClick={addData}>Clcik</button>
             <div>Name: {profileData.name} {profileData.surName}</div>
             <div>Email: {profileData.email}</div>
             <div>Phone: {profileData.phone}</div>
