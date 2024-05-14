@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-//test data to make sure functions running correctly
-
-const DATA = [
+const DATA= [
   {
       id: 1,
       category: "experience",
@@ -21,7 +19,7 @@ const DATA = [
       subObjects: [
           { placeName: 1, subName: "SubObject 2.1" },
           { placeName: 2, subName: "SubObject 2.2" },
-          { placeName: 3, subName: "SubObject 2.3" }
+          { placeName: 3, subName: "SubObject 2.3" },
       ]
   },
   {
@@ -30,25 +28,13 @@ const DATA = [
       subObjects: [
           { placeName: 1, subName: "SubObject 3.1" },
           { placeName: 2, subName: "SubObject 3.2" },
-          { placeName: 3, subName: "SubObject 3.3" }
+          { placeName: 3, subName: "SubObject 3.3" },
       ]
   }
 ];
 
-function addData(data) {
-  const newEntry = DATA.map((entry) => {
-    if(data.category === entry.category) {
-      console.log('testy test', entry.subObjects);
-      entry.subObjects.push(data);
-      console.log('post push', entry.subObjects);
-      return;
-    };
-  })
-}
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* passing DATA as prop to App, it's accessible as props.cv*/}
-    <App cv={DATA} addData={addData}/>
+    <App cv={DATA}  />
   </React.StrictMode>,
 )

@@ -3,10 +3,35 @@ import ProfileInput from './components/ProfileInput';
 import JobInput from './components/JobInput';
 import EducationInput from './components/EducationInput';
 import { useEffect, useState } from 'react';
-import DisplayInfo from './components/DisplayInfo';
 import JobEntry from './components/JobEntry';
 
 export default function App(props) {
+
+  const [cv, setCv] = useState(props.cv);
+
+  function addData(data) {
+    console.log('this is data: ', data)
+    console.log('testy test', cv);
+    const newEntry = cv.map((entry) => {
+      if(data.category === entry.category) {
+        
+        entry.subObjects.push(data);
+        console.log('post push', cv);
+        return;
+      };
+    })
+    
+    setCv([...cv, newEntry]);
+    console.log('this is final cv: ', cv)
+  }
+  
+  function editData(data) {
+    console.log('this is editData');
+  }
+  
+  function deleteData(data) {
+    console.log('this is deleteData');
+  }
 
   const [profileData, setProfileData] = useState({
     category: '',
@@ -21,17 +46,6 @@ export default function App(props) {
   function addInfo(profile) {
     setProfileData(prevData => ({ ...prevData, ...profile }));
   }
-
-  // SO, COPY THE ABOVE APPROACH FOR CAPTURING USER INPUT
-  // FOR THE JOBS, EDUCATION, ETC. SECTIONS, USE profileData
-  // TO CONTAIN THE DATA THEN PASS IT BACK TO THE "DB" IN MAIN
-  // WITH THE BELOW FUNCTION
-
-  function addData(data) {
-    props.addData(data);
-  }
-
-const test = 'testing';
 
   return (
     <>
@@ -60,7 +74,7 @@ const test = 'testing';
           </section>
           <section className='work-experience'>
             <h2>Work Experience</h2>
-            <JobEntry data={props.cv} />
+            <JobEntry data={cv} />
           </section>
           <section className='education'>Education</section>
           <section className='skills'>Skills</section>

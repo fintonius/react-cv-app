@@ -2,16 +2,16 @@ import { useState } from 'react';
 
 export default function JobInput(props) {
 
-    const [companyName, setCompanyName] = useState('');
-    const [jobTitle, setJobTitle] = useState('');
+    const [placeName, setplaceName] = useState('');
+    const [id, setId] = useState('');
     const [date, setDate] = useState('');
     const [description, setDescription] = useState('');
     
     const onSubmit = (e) => {
         e.preventDefault();
         const jobData = {
-            companyName: companyName,
-            jobTitle: jobTitle,
+            placeName: placeName,
+            id: id,
             date: date,
             description: description,
             category: 'experience',
@@ -29,8 +29,8 @@ export default function JobInput(props) {
                     type="text" 
                     id="company-name" 
                     name="company-name"
-                    value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
+                    value={placeName}
+                    onChange={(e) => setplaceName(e.target.value)}
                     placeholder="Company Name"
                 />
                 <label htmlFor="job-title">
@@ -39,8 +39,8 @@ export default function JobInput(props) {
                 <input 
                     type="text" 
                     id="job-title" 
-                    value={jobTitle}
-                    onChange={(e) => setJobTitle(e.target.value)}
+                    value={id}
+                    onChange={(e) => setId(e.target.value)}
                     autoComplete="off" 
                     placeholder='Job Title'
                 />
