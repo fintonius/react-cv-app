@@ -12,6 +12,7 @@ export default function JobInput(props) {
         const jobData = {
             placeName: placeName,
             id: id,
+            key: id,
             date: date,
             description: description,
             category: 'experience',

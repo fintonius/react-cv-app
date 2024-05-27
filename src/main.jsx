@@ -8,9 +8,9 @@ const DATA= [
       id: 1,
       category: "experience",
       subObjects: [
-          { placeName: 'Tate',  id: 1, dates: '2019 - present', description: 'some text here for the moment'},
-          { placeName: 'NGS', id: 2, dates: '2015 - 2019', description: 'some text here for the moment'},
-          { placeName: 'Cheeverstown', id: 3, dates: '2009 - 2011', description: 'some text here for the moment'}
+          // { placeName: 'Tate',  id: 1, key: 1, dates: '2019 - present', description: 'some text here for the moment'},
+          // { placeName: 'NGS', id: 2, key: 2, dates: '2015 - 2019', description: 'some text here for the moment'},
+          // { placeName: 'Cheeverstown', id: 3, key: 3, dates: '2009 - 2011', description: 'some text here for the moment'}
       ]
   },
   {
