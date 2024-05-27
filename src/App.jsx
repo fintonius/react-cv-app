@@ -62,6 +62,7 @@ export default function App(props) {
 
           Hell world
           this is not a test
+          super cereal
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
