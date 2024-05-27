@@ -61,6 +61,7 @@ export default function App(props) {
         <div className='cv'>
 
           Hell world
+          this is not a test
           <h1>CV</h1>
           <section className='personal-info'>
             Personal Info
